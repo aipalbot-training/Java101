@@ -1,5 +1,7 @@
 package com.aipalbot.firstjava;
 
+import java.text.DecimalFormat;
+
 /**
  * Hello world!
  *
@@ -53,6 +55,7 @@ public class App
         
         System.out.println(quantity * costPerItem);
         
+        System.out.println("*********************************************");
       //Assignment
       /* 
        * Calculate the total price of 8 items at $3 each and subtract the cost of 2 items from the total price, 
@@ -60,6 +63,34 @@ public class App
        * Display the amount to be paid after discount
        */
     	
+        
+        //ASSUME THAT WE RECEIVE THE QUANTITY AND PRICE FROM A UI SCREEN
+        String quantityBox = "30000";
+        String pricePerItemBox = "8667.55";
+        double totalPriceFromBox;
+        
+        String totalPriceString = quantityBox + pricePerItemBox;
+        
+        System.out.println("Concatenation of String values "+ totalPriceString);
+        //totalPriceFromBox = quantityBox + pricePerItemBox;
+        
+        //Casting is the same thing as converting types from one type to another
+        int quantityOfItem =Integer.parseInt(quantityBox);
+        double pricePerItem = Double.parseDouble(pricePerItemBox);
+        
+        totalPriceFromBox =quantityOfItem * pricePerItem;
+        System.out.println("Total price of items "+ totalPriceFromBox);
+        
+        DecimalFormat dFormat = new DecimalFormat("####,###,###.00");
+       String totalAmount = "$" + dFormat.format(totalPriceFromBox);
+        
+        
+        System.out.println("Checkout amount: "+totalAmount);
+        
+        
+        
+        
+        
         
     }
     
