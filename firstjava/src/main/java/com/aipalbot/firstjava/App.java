@@ -19,6 +19,7 @@ public class App
     	boolean areYouComing = true;
     	boolean imNotComing = false;
     	
+    	if(areYouComing) System.out.println("I am aware");
     	//Calculate the total price of 3 items at $7 each and subtract the cost of 1 item from the total price, 
     	//if total price is more than $17
     	
