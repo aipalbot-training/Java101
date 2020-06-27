@@ -133,12 +133,12 @@ public class App
     	
  		double totalAmount = 0.0; //accumulator
  		
- 		System.out.print("ItemName \t |");
- 		System.out.print("ItemPrice \t |");
- 		System.out.print("ItemQuantity \t |");
- 		System.out.println("TotalCost \t ");
+
  		
     	for(int i = 0; i < size; i++) {
+    		int header = i+1;
+    		System.out.println("***************** Item "+header+" **********************");
+    		
     		Scanner input = new Scanner(System.in);
     		System.out.println("Enter Item Name: ");
     		String itemName = input.nextLine();
@@ -166,6 +166,23 @@ public class App
     		totalAmount +=totalCostPerItem;
     		
     	}
+    	
+    	
+    	
+ 		System.out.print("ItemName \t |");
+ 		System.out.print("ItemPrice \t |");
+ 		System.out.print("ItemQuantity \t |");
+ 		System.out.println("TotalCost \t ");
+ 		//This is to only display the items in table
+    	for(int i = 0; i < size; i++) {    		
+    		System.out.print(itemNames[i] + " \t \t |");
+     		System.out.print(itemPrices[i] +" \t \t|");
+     		System.out.print(itemQuantities[i]+" \t \t|");
+     		System.out.println(	totalCostPerItems[i] +" \t ");
+    	}
+    	
+    	
+    	
     	
     	 DecimalFormat dFormat = new DecimalFormat("####,###,###.00");
          String formatTotalAmount = "$" + dFormat.format(totalAmount);
