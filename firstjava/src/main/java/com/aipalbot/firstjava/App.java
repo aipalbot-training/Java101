@@ -188,7 +188,7 @@ public class App
          String formatTotalAmount = "$" + dFormat.format(totalAmount);
          
     	System.out.println("Total Amount: " + formatTotalAmount);   	
-    	*/
+    	
     	
     	String[] studentNames = new String[3];
     	studentNames[0]="June";
@@ -200,10 +200,11 @@ public class App
     	}
     	
     	System.out.println("***********************************************************");
-    	int j=1;
-    	for(String student: studentNames) {
-    		System.out.println("Student "+ (j++) + " is " + student);
-    	}
+//    	//int j=1;
+//    	for(String student: studentNames) {
+//    		System.out.println("Student "+ (j++) + " is " + student);
+//    	}
+//    	
     	
     	
     	int matRow=2;
@@ -216,7 +217,7 @@ public class App
     	/*
     	 * |6 9 8|
     	 * |2 7 9|
-    	 */
+    	 
 
     	for(int row=0; row<size; row++) {
     		System.out.println("Current row is " + row);
@@ -253,6 +254,7 @@ public class App
     		sum+=sumOfRow;
     	}
     	System.out.println("Sum of all="+ sum);
+    	*/
     	
     	/*
     	 * A student scored 70 in course101, 50 in course102, and 85 in course103
@@ -270,19 +272,50 @@ public class App
     	 * Calculate student GPA
     	 * Sum of all gradingPoint*creditHrs / sum of all creditHrs
     	 */
-    	/*
-    	int[][] abc = new int[3][2];
-    	int sum =0;
     	
-    	for(.____) {
-    		int mult=1;
+    	int r =3;
+    	int c=2;
+    	int[][] arrayA = new int[r][c];
+    	int sumOfAll =0;
+    	int sumCrHr=0;
+    	
+    	//ENTER VALUES OF THE ARRAY
+    	for(int i=0; i<r; i++) {
+    		System.out.println("Current row is " + i);
     		
-    		for() {
-    			mult*=matA[row][col]
-    		}
-    		sum+=mult;
+    		for(int j=0; j < c; j++) {   
+    			System.out.println("row="+i+" , col="+ j);
+    			Scanner input = new Scanner(System.in);
+    			System.out.println("Enter value for row "+ i + ", col " + j );
+    			arrayA[i][j]=input.nextInt();	  			
+    		}    
+    		
     	}
-    	*/
+    	
+    	
+    	//calculate point * crhr
+    	
+    	for(int i=0; i<r; i++) {
+    		int mult=1;
+    		for(int j=0; j < c; j++) {  
+    			
+    			mult*=arrayA[i][j];  // mult = mult * arrayA[i][j]
+    			//add all the values in second columns
+    			if(j==1)
+    				sumCrHr+=arrayA[i][j];
+    			
+    		} 
+    		System.out.println("Row " + (i+1) + " = " + mult);
+    		sumOfAll += mult;    		
+    	}
+    	
+    	System.out.println("Sum of Point*CrdHrs = " + sumOfAll);
+    	
+    	System.out.println("Sum of CrdHrs = " + sumCrHr);
+    	
+    	double gpa = sumOfAll/sumCrHr;
+    	
+    	System.out.println(" (GPA) Sum of Point*CrdHrs / Sum of CrdHrs = " + gpa);
     	
     }
     
