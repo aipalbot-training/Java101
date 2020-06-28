@@ -122,7 +122,7 @@ public class App
     	Laptop			450.29		1			450.29
     	Monitor			120.23		1			120.23
     				626.45
-    */
+    
     	String[] itemNames= new String[5];  //0,1,2,3,4
     	int size = itemNames.length;
     	double[] itemPrices = new double[size]; 
@@ -161,7 +161,7 @@ public class App
      		System.out.print(itemQuantity+" \t |");
      		System.out.println(totalCostPerItem+" \t ");
     		
-     		*/
+     		
     		
     		totalAmount +=totalCostPerItem;
     		
@@ -175,9 +175,9 @@ public class App
  		System.out.println("TotalCost \t ");
  		//This is to only display the items in table
     	for(int i = 0; i < size; i++) {    		
-    		System.out.print(itemNames[i] + " \t \t |");
-     		System.out.print(itemPrices[i] +" \t \t|");
-     		System.out.print(itemQuantities[i]+" \t \t|");
+    		System.out.print(itemNames[i] + " \t |");
+     		System.out.print(itemPrices[i] +" \t |");
+     		System.out.print(itemQuantities[i]+" \t |");
      		System.out.println(	totalCostPerItems[i] +" \t ");
     	}
     	
@@ -187,11 +187,102 @@ public class App
     	 DecimalFormat dFormat = new DecimalFormat("####,###,###.00");
          String formatTotalAmount = "$" + dFormat.format(totalAmount);
          
-    	System.out.println("Total Amount: " + formatTotalAmount);
+    	System.out.println("Total Amount: " + formatTotalAmount);   	
+    	*/
+    	
+    	String[] studentNames = new String[3];
+    	studentNames[0]="June";
+    	studentNames[1]="May";
+    	studentNames[2]="Sept";
+    	
+    	for(int i=0; i<studentNames.length;i++) {
+    		System.out.println("Student "+ (i+1) + " is " + studentNames[i]);
+    	}
+    	
+    	System.out.println("***********************************************************");
+    	int j=1;
+    	for(String student: studentNames) {
+    		System.out.println("Student "+ (j++) + " is " + student);
+    	}
+    	
+    	
+    	int matRow=2;
+    	int matCol=3;
+    	
+    	int[][] matA = new int[matRow][matCol];
+    	
+    	int size = matA.length;
+    	System.out.println(size);
+    	/*
+    	 * |6 9 8|
+    	 * |2 7 9|
+    	 */
+
+    	for(int row=0; row<size; row++) {
+    		System.out.println("Current row is " + row);
+    		
+    		for(int col=0; col < matCol; col++) {
+    			// matA[row][col]
+    			System.out.println("row="+row+" , col="+ col);
+    			Scanner input = new Scanner(System.in);
+    			System.out.println("Enter value for row "+ row + ", col " + col );
+    			matA[row][col]=input.nextInt();
+    		}    		
+    	}
     	
     	
     	
+    	for(int row=0; row<size; row++) {    		
+    		System.out.print("|");
+    		for(int col=0; col < matCol; col++) {
+    			System.out.print(matA[row][col] + "\t");
+    		}
+    		System.out.println("|");
+    	}
+    		
+    	//Sum all the numbers on each row
+    	//Sum of row 0 = 23
+    	//Sum of row 1 = 18
+    	int sum=0;
+    	for(int row=0; row<size; row++) {    	
+    		int sumOfRow=1; //use 0 when summing and 1 when multiplying
+    		for(int col=0; col < matCol; col++) {
+    			sumOfRow*=matA[row][col]; // change * to +
+    		}
+    		System.out.println("Sum of row "+ row + " = " + sumOfRow);
+    		sum+=sumOfRow;
+    	}
+    	System.out.println("Sum of all="+ sum);
     	
+    	/*
+    	 * A student scored 70 in course101, 50 in course102, and 85 in course103
+    	 * Credit hours for course101=3, course102=3, course103=4
+    	 * Grading 
+    	 * 0-39 = 1 point
+    	 * 40-49 = 2 point
+    	 * 50-59 = 3 point
+    	 * 60-69 =4 point
+    	 * 70-100=5 point
+    	 * 2-D array contains rows represent courses and columns rep grading point and credit hrs
+    	 * |5 3|
+    	 * |3 3|
+    	 * |5 4|
+    	 * Calculate student GPA
+    	 * Sum of all gradingPoint*creditHrs / sum of all creditHrs
+    	 */
+    	/*
+    	int[][] abc = new int[3][2];
+    	int sum =0;
+    	
+    	for(.____) {
+    		int mult=1;
+    		
+    		for() {
+    			mult*=matA[row][col]
+    		}
+    		sum+=mult;
+    	}
+    	*/
     	
     }
     
